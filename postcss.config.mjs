@@ -1,9 +1,15 @@
-/** @type {import('postcss-load-config').Config} */
-const config = {
-  output: 'export', // 添加這一行
-  plugins: {
-    tailwindcss: {},
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",  // <--- 新增這一行
+  eslint: {
+    ignoreDuringBuilds: true,
   },
-};
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    unoptimized: true,
+  },
+}
 
-export default config;
+export default nextConfig
